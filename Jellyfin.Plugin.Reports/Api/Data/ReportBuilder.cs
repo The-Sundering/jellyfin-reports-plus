@@ -107,7 +107,8 @@ namespace Jellyfin.Plugin.Reports.Api.Data
                         HeaderMetadata.SeasonNumber,
                         HeaderMetadata.DateAdded,
                         HeaderMetadata.Year,
-                        HeaderMetadata.Genres
+                        HeaderMetadata.Genres,
+                        HeaderMetadata.Tags
                     };
 
                 case ReportIncludeItemTypes.Series:
@@ -124,6 +125,7 @@ namespace Jellyfin.Plugin.Reports.Api.Data
                         HeaderMetadata.DateAdded,
                         HeaderMetadata.Year,
                         HeaderMetadata.Genres,
+                        HeaderMetadata.Tags,
                         HeaderMetadata.ParentalRating,
                         HeaderMetadata.CommunityRating,
                         HeaderMetadata.Runtime,
@@ -146,7 +148,8 @@ namespace Jellyfin.Plugin.Reports.Api.Data
                         HeaderMetadata.ReleaseDate,
                         HeaderMetadata.Tracks,
                         HeaderMetadata.Year,
-                        HeaderMetadata.Genres
+                        HeaderMetadata.Genres,
+                        HeaderMetadata.Tags
                     };
 
                 case ReportIncludeItemTypes.MusicArtist:
@@ -162,7 +165,8 @@ namespace Jellyfin.Plugin.Reports.Api.Data
                         HeaderMetadata.Countries,
                         HeaderMetadata.DateAdded,
                         HeaderMetadata.Year,
-                        HeaderMetadata.Genres
+                        HeaderMetadata.Genres,
+                        HeaderMetadata.Tags
                     };
 
                 case ReportIncludeItemTypes.Movie:
@@ -179,6 +183,7 @@ namespace Jellyfin.Plugin.Reports.Api.Data
                         HeaderMetadata.ReleaseDate,
                         HeaderMetadata.Year,
                         HeaderMetadata.Genres,
+                        HeaderMetadata.Tags,
                         HeaderMetadata.ParentalRating,
                         HeaderMetadata.CommunityRating,
                         HeaderMetadata.Runtime,
@@ -205,6 +210,7 @@ namespace Jellyfin.Plugin.Reports.Api.Data
                         HeaderMetadata.ReleaseDate,
                         HeaderMetadata.Year,
                         HeaderMetadata.Genres,
+                        HeaderMetadata.Tags,
                         HeaderMetadata.ParentalRating,
                         HeaderMetadata.CommunityRating
                     };
@@ -223,6 +229,7 @@ namespace Jellyfin.Plugin.Reports.Api.Data
                         HeaderMetadata.ReleaseDate,
                         HeaderMetadata.Year,
                         HeaderMetadata.Genres,
+                        HeaderMetadata.Tags,
                         HeaderMetadata.ParentalRating,
                         HeaderMetadata.CommunityRating,
                         HeaderMetadata.Trailers
@@ -246,6 +253,7 @@ namespace Jellyfin.Plugin.Reports.Api.Data
                         HeaderMetadata.ReleaseDate,
                         HeaderMetadata.Year,
                         HeaderMetadata.Genres,
+                        HeaderMetadata.Tags,
                         HeaderMetadata.ParentalRating,
                         HeaderMetadata.CommunityRating,
                         HeaderMetadata.Runtime,
@@ -269,6 +277,7 @@ namespace Jellyfin.Plugin.Reports.Api.Data
                         HeaderMetadata.ReleaseDate,
                         HeaderMetadata.Year,
                         HeaderMetadata.Genres,
+                        HeaderMetadata.Tags,
                         HeaderMetadata.ParentalRating,
                         HeaderMetadata.CommunityRating,
                         HeaderMetadata.Runtime,
@@ -302,6 +311,7 @@ namespace Jellyfin.Plugin.Reports.Api.Data
                         HeaderMetadata.ReleaseDate,
                         HeaderMetadata.Year,
                         HeaderMetadata.Genres,
+                        HeaderMetadata.Tags,
                         HeaderMetadata.ParentalRating,
                         HeaderMetadata.CommunityRating,
                         HeaderMetadata.Runtime,
@@ -554,6 +564,10 @@ namespace Jellyfin.Plugin.Reports.Api.Data
 
                 case HeaderMetadata.Genres:
                     option.Column = (i, r) => this.GetListAsString(i.Genres.ToList());
+                    break;
+
+                case HeaderMetadata.Tags:
+                    option.Column = (i, r) => this.GetListAsString(i.Tags.ToList());
                     break;
 
             }

@@ -29,6 +29,7 @@ namespace Jellyfin.Plugin.Reports.Api.Common
         Resolution,
         Subtitles,
         Genres,
+        Tags,
         Countries,
         Status,
         Tracks,
